@@ -613,31 +613,6 @@ mvn test
 
 ---
 
-# 📚 Wipro Training Curriculum Alignment
-
-This project demonstrates the major automation concepts covered in the training curriculum:
-
-- Selenium WebDriver
-- Browser and navigation commands
-- WebElement identification
-- CSS selectors and XPath
-- Synchronization strategies
-- TestNG
-- Automation framework design
-- Page Object Model
-- Maven lifecycle
-- Cucumber
-- Gherkin
-- Behavior-Driven Development
-- API and Web Service concepts
-- HTTP methods and status codes
-- REST Assured
-- JSONPath
-- API assertions
-- Reporting
-
----
-
 # 🔮 Future Enhancements
 
 Possible future improvements:
@@ -654,21 +629,6 @@ Possible future improvements:
 - Multiple environment support
 - Mobile automation using Appium
 
----
-
-# 📌 Project Status
-
-| Module | Status |
-|---|---|
-| Selenium UI Automation | ✅ Completed |
-| TestNG | ✅ Completed |
-| Page Object Model | ✅ Completed |
-| Cucumber / BDD | ✅ Completed |
-| REST API Testing | ✅ Completed |
-| Maven Integration | ✅ Completed |
-| Test Reporting | ✅ Completed |
-| GitHub Repository | ✅ Completed |
-| Documentation | ✅ Completed |
 
 ---
 
@@ -679,6 +639,3 @@ B.Tech Computer Science & Engineering (AI & ML)
 
 ---
 
-## Disclaimer
-
-This project is developed for educational and automation-testing purposes. SauceDemo and DummyJSON are used as demo/testing applications and APIs.

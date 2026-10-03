@@ -1,128 +1,115 @@
-# E-Commerce Hybrid Automation Framework
+# 🛒 E-Commerce Hybrid Automation Framework
 
-A hybrid automation testing framework built with **Java, Selenium WebDriver, TestNG, Cucumber, REST Assured, and Maven** for testing an e-commerce application through both **UI automation** and **REST API automation**.
+A **hybrid test automation framework** built with **Java, Selenium WebDriver, TestNG, Cucumber, REST Assured, and Maven** for testing an e-commerce application through both **UI automation** and **REST API automation**.
 
-The framework follows the **Page Object Model (POM)** for maintainable UI automation and uses **Behavior-Driven Development (BDD)** with Cucumber/Gherkin for business-readable scenarios.
-
----
-
-## 📌 Project Overview
-
-This project demonstrates how a practical automation framework can combine multiple testing approaches in one Maven project.
-
-### What this project automates
-
-**UI Testing**
-- Valid user login
-- Invalid login validation
-- Product selection
-- Add product to cart
-- Cart validation
-- Checkout workflow
-- Order completion
-
-**BDD Testing**
-- Login scenario using Cucumber
-- Gherkin feature file
-- Step definitions
-- Cucumber hooks
-- Cucumber test runner
-
-**API Testing**
-- Get all products
-- Get product by ID
-- Search products
-- Add product
-- Update product
-- Delete product
-- HTTP status validation
-- JSON response validation
+The framework uses the **Page Object Model (POM)** for maintainable UI automation and **Behavior-Driven Development (BDD)** with Cucumber/Gherkin for readable business scenarios.
 
 ---
 
-# 🌐 Applications Used
+## 📌 Table of Contents
+
+- [Project Overview](#-project-overview)
+- [Applications Under Test](#-applications-under-test)
+- [Technology Stack](#-technology-stack)
+- [Key Features](#-key-features)
+- [Framework Architecture](#-framework-architecture)
+- [UI Automation](#-ui-automation)
+- [BDD with Cucumber](#-bdd-with-cucumber)
+- [API Automation](#-api-automation)
+- [Project Structure](#-project-structure)
+- [Test Coverage](#-test-coverage)
+- [Test Execution](#-test-execution)
+- [Reporting](#-reporting)
+- [Configuration](#-configuration)
+- [Prerequisites](#-prerequisites)
+- [How to Run](#-how-to-run)
+- [Design Principles](#-design-principles)
+- [Wipro Curriculum Alignment](#-wipro-curriculum-alignment)
+- [Future Enhancements](#-future-enhancements)
+- [Project Status](#-project-status)
+- [Author](#-author)
+
+---
+
+# 📌 Project Overview
+
+This project demonstrates a **hybrid automation framework** that combines:
+
+1. **UI automation** using Selenium WebDriver and TestNG
+2. **BDD automation** using Cucumber and Gherkin
+3. **REST API automation** using REST Assured
+4. **Build and test execution** using Maven
+5. **Page Object Model** for reusable and maintainable UI code
+6. **Automated reporting** through Cucumber and Maven/Surefire
+
+The framework is designed around a realistic e-commerce workflow:
+
+```text
+Login
+   ↓
+Products
+   ↓
+Add Product
+   ↓
+Cart
+   ↓
+Checkout
+   ↓
+Customer Information
+   ↓
+Order Overview
+   ↓
+Order Complete
+```
+
+---
+
+# 🌐 Applications Under Test
 
 ## 1. UI Application — SauceDemo
 
 **Application:** SauceDemo  
 **URL:** https://www.saucedemo.com/
 
-SauceDemo is used as the e-commerce application under test.
+SauceDemo is used as the e-commerce web application for UI automation.
 
-### Main UI workflow
+### Main UI scenarios
 
-```text
-Login
-  ↓
-Products
-  ↓
-Add Product
-  ↓
-Cart
-  ↓
-Checkout
-  ↓
-Customer Information
-  ↓
-Order Overview
-  ↓
-Order Complete
-```
+- Valid login
+- Invalid login
+- Product selection
+- Add product to cart
+- Cart validation
+- Checkout
+- Order completion
 
 ### 📸 UI Screenshots
 
-Screenshots should be captured from the application during your own automation run and stored under:
-
-```text
-docs/screenshots/
-```
-
-Recommended screenshots:
-
-- Login page
-- Invalid login message
-- Products page
-- Cart page
-- Checkout information page
-- Order overview page
-- Order completion page
-
-Example Markdown image syntax:
-
-```markdown
-![SauceDemo Login](docs/screenshots/login-page.png)
-![Invalid Login](docs/screenshots/invalid-login.png)
-![Products](docs/screenshots/products-page.png)
-![Cart](docs/screenshots/cart-page.png)
-![Checkout](docs/screenshots/checkout-page.png)
-![Order Complete](docs/screenshots/order-complete.png)
-```
+The following screenshots show the application pages covered by the automation flow.
 
 ### Login Page
 
-![Login Page](docs/screenshots/login-page.png)
+![SauceDemo Login Page](docs/screenshots/login-page.png)
 
 ### Invalid Login
 
-![Invalid Login](docs/screenshots/invalid-login.png)
+![SauceDemo Invalid Login](docs/screenshots/invalid-login.png)
 
 ### Products Page
 
-![Products Page](docs/screenshots/products-page.png)
+![SauceDemo Products Page](docs/screenshots/products-page.png)
 
 ### Cart Page
 
-![Cart Page](docs/screenshots/cart-page.png)
+![SauceDemo Cart Page](docs/screenshots/cart-page.png)
 
 ### Checkout Page
 
-![Checkout Page](docs/screenshots/checkout-page.png)
+![SauceDemo Checkout Page](docs/screenshots/checkout-page.png)
 
 ### Order Complete
 
-![Order Complete](docs/screenshots/order-complete.png)
-
-> The image references above are intentionally stored as repository paths so the README becomes visual and easy to follow after the corresponding screenshots are added to `docs/screenshots/`.
+![SauceDemo Order Complete](docs/screenshots/order-complete.png)
 
 ---
 
@@ -131,7 +118,7 @@ Example Markdown image syntax:
 **API:** DummyJSON  
 **Base URL:** https://dummyjson.com
 
-The API layer is used to demonstrate REST API automation using REST Assured.
+DummyJSON is used for REST API automation with REST Assured.
 
 ### API operations covered
 
@@ -144,7 +131,7 @@ PUT     /products/{id}
 DELETE  /products/{id}
 ```
 
-> DummyJSON simulates several write operations, so POST, PUT and DELETE tests validate the returned API response rather than expecting permanent server-side changes.
+> DummyJSON simulates several write operations. Therefore, POST, PUT, and DELETE tests validate the API responses rather than expecting permanent server-side changes.
 
 ---
 
@@ -152,52 +139,95 @@ DELETE  /products/{id}
 
 | Technology | Purpose |
 |---|---|
-| Java | Programming language |
-| Selenium WebDriver | Web UI automation |
-| TestNG | Test execution and assertions |
-| Cucumber | BDD automation |
-| Gherkin | Human-readable test scenarios |
-| REST Assured | REST API automation |
-| JSON / JSONPath | API response validation |
-| Maven | Build and dependency management |
-| Google Chrome | Browser for UI automation |
-| Git | Version control |
-| GitHub | Source code hosting |
+| **Java** | Programming language |
+| **Selenium WebDriver** | Browser/UI automation |
+| **TestNG** | Test execution and assertions |
+| **Cucumber** | BDD test automation |
+| **Gherkin** | Human-readable test scenarios |
+| **REST Assured** | REST API automation |
+| **JSON / JSONPath** | API response validation |
+| **Maven** | Build and dependency management |
+| **Google Chrome** | Browser for UI automation |
+| **Git** | Version control |
+| **GitHub** | Source code hosting |
+
+---
+
+# ✨ Key Features
+
+### UI Automation
+- Browser automation with Selenium WebDriver
+- Login validation
+- Product and cart workflows
+- Checkout automation
+- Order completion validation
+
+### TestNG
+- Test execution
+- Assertions
+- `@BeforeMethod`
+- `@AfterMethod`
+
+### Page Object Model
+- Separate page classes
+- Reusable locators and actions
+- Better test maintainability
+
+### BDD / Cucumber
+- Gherkin feature files
+- Step definitions
+- Cucumber hooks
+- Test runner
+- HTML reporting
+
+### API Automation
+- GET, POST, PUT, DELETE requests
+- HTTP status-code validation
+- JSON response validation
+- JSONPath extraction
+
+### Maven
+- Dependency management
+- Compilation
+- Test execution
+- Packaging
 
 ---
 
 # 🏗️ Framework Architecture
 
-The project follows a layered hybrid automation architecture.
+The framework follows a layered design:
 
 ```text
-                 E-COMMERCE HYBRID AUTOMATION FRAMEWORK
-                                  │
-                 ┌────────────────┴────────────────┐
-                 │                                 │
-                 ▼                                 ▼
-          UI AUTOMATION                       API AUTOMATION
-                 │                                 │
-             Selenium                         REST Assured
-                 │                                 │
-              TestNG                         ProductApi
-                 │                                 │
-         Page Object Model                  JSON / JSONPath
-                 │                                 │
-                 └────────────────┬────────────────┘
-                                  │
-                                  ▼
-                           Maven Test Execution
-                                  │
-                                  ▼
+                  E-COMMERCE HYBRID AUTOMATION FRAMEWORK
+                                   │
+                 ┌─────────────────┴─────────────────┐
+                 │                                   │
+                 ▼                                   ▼
+          UI AUTOMATION                        API AUTOMATION
+                 │                                   │
+             Selenium                           REST Assured
+                 │                                   │
+              TestNG                           ProductApi
+                 │                                   │
+       Page Object Model                    JSON / JSONPath
+                 │                                   │
+                 └─────────────────┬─────────────────┘
+                                   │
+                                   ▼
+                            Maven Test Execution
+                                   │
+                                   ▼
                               Test Reports
 ```
 
 ---
 
-# 🖥️ UI Automation Architecture
+# 🖥️ UI Automation
 
 The UI layer follows the **Page Object Model (POM)**.
+
+## UI execution flow
 
 ```text
 LoginTest
@@ -224,41 +254,38 @@ Chrome Browser
 SauceDemo
 ```
 
-### Page Objects
+## Page Objects
 
-| Page Object | Responsibility |
+| Class | Responsibility |
 |---|---|
-| `LoginPage` | Username, password, login action and invalid-login validation |
-| `ProductsPage` | Product selection, add-to-cart and cart navigation |
+| `LoginPage` | Username, password, login action, invalid-login validation |
+| `ProductsPage` | Product selection, add-to-cart, cart navigation |
 | `CartPage` | Cart validation and checkout navigation |
-| `CheckoutPage` | Customer details, checkout navigation and order completion |
+| `CheckoutPage` | Customer details, checkout navigation, order completion |
 
 ---
 
-# 🔄 BDD / Cucumber Architecture
+# 🔄 BDD with Cucumber
 
-Cucumber is used to describe business scenarios in Gherkin syntax.
+Cucumber is used for **Behavior-Driven Development**.
+
+The BDD flow is:
 
 ```text
 Feature File
-     │
-     ▼
+     ↓
 Gherkin Scenario
-     │
-     ▼
+     ↓
 Step Definitions
-     │
-     ▼
+     ↓
 Page Object
-     │
-     ▼
+     ↓
 Selenium WebDriver
-     │
-     ▼
+     ↓
 Web Application
 ```
 
-### Example Scenario
+## Example scenario
 
 ```gherkin
 Feature: User Login
@@ -271,21 +298,25 @@ Feature: User Login
     Then the user should be redirected to the inventory page
 ```
 
-### Cucumber components
+## Cucumber components
 
 ```text
-login.feature
-     │
-     ├── LoginSteps.java
-     ├── CucumberHooks.java
-     └── CucumberTest.java
+src/test/resources/features/
+└── login.feature
+
+src/test/java/com.wipro.automation.steps/
+├── LoginSteps.java
+└── CucumberHooks.java
+
+src/test/java/com.wipro.automation.runners/
+└── CucumberTest.java
 ```
 
 ---
 
-# 🔌 API Automation Architecture
+# 🔌 API Automation
 
-The API layer separates API request logic from API test cases.
+The API layer separates request handling from test validation.
 
 ```text
 ProductApiTest
@@ -306,15 +337,17 @@ ProductApiTest
  Assertions / JSONPath
 ```
 
-### API validation includes
+## API validations
 
-- HTTP status code
+The framework validates:
+
+- HTTP status codes
 - Response body
 - Product ID
 - Product title
 - Search results
-- Delete confirmation
 - JSON fields
+- Delete confirmation
 
 ---
 
@@ -380,27 +413,27 @@ ecommerce-hybrid-automation-framework/
 
 ---
 
-# 🧪 Automated Test Coverage
+# 🧪 Test Coverage
 
 The current framework executes **10 automated tests**.
 
-## UI / TestNG
+## UI / TestNG — 3 tests
 
-| Test ID | Test Case |
+| ID | Test Case |
 |---|---|
 | UI-01 | Valid Login |
 | UI-02 | Invalid Login |
 | UI-03 | Complete Checkout Flow |
 
-## Cucumber
+## Cucumber — 1 scenario
 
-| Test ID | Scenario |
+| ID | Scenario |
 |---|---|
 | BDD-01 | Successful Login with Valid Credentials |
 
-## API / REST Assured
+## API / REST Assured — 6 tests
 
-| Test ID | Test Case |
+| ID | Test Case |
 |---|---|
 | API-01 | Get All Products |
 | API-02 | Get Product by ID |
@@ -413,7 +446,7 @@ The current framework executes **10 automated tests**.
 
 # ▶️ Test Execution
 
-The full automation suite can be executed using Maven.
+The full suite can be executed using Maven.
 
 ## Compile
 
@@ -421,13 +454,13 @@ The full automation suite can be executed using Maven.
 mvn compile
 ```
 
-## Run Tests
+## Run all tests
 
 ```bash
 mvn test
 ```
 
-## Package Project
+## Package the project
 
 ```bash
 mvn package
@@ -435,9 +468,9 @@ mvn package
 
 ---
 
-# ✅ Current Test Result
+# ✅ Latest Test Result
 
-Latest successful execution:
+The latest successful execution produced:
 
 ```text
 Tests run: 10
@@ -452,21 +485,21 @@ BUILD SUCCESS
 
 # 📊 Reporting
 
-The project uses Maven/Surefire for test execution and Cucumber HTML reporting.
+The framework generates test results through Maven/Surefire and Cucumber.
 
-### Cucumber HTML report
+### Cucumber HTML Report
 
 ```text
 target/cucumber-report.html
 ```
 
-### Surefire reports
+### Surefire Reports
 
 ```text
 target/surefire-reports/
 ```
 
-These reports help identify:
+These reports provide information about:
 
 - Total tests
 - Passed tests
@@ -479,7 +512,7 @@ These reports help identify:
 
 # ⏳ Synchronization
 
-The framework uses Selenium synchronization mechanisms to improve test stability.
+The UI automation uses Selenium synchronization mechanisms to improve stability.
 
 Current techniques include:
 
@@ -488,31 +521,7 @@ Current techniques include:
 - `WebDriverWait`
 - Expected Conditions
 
-These are used for page navigation, element visibility and dynamic page updates.
-
----
-
-# 🧱 Framework Design Principles
-
-## Separation of Concerns
-
-Test logic, page interactions and API request handling are maintained in separate classes.
-
-## Reusability
-
-Common browser setup and reusable page methods are shared between tests.
-
-## Maintainability
-
-Locators and page actions are kept inside Page Object classes.
-
-## Readability
-
-BDD feature files describe scenarios in business-readable Gherkin syntax.
-
-## Scalability
-
-Additional pages, API modules and feature files can be added without redesigning the complete framework.
+These are used for element visibility, page transitions and dynamic UI updates.
 
 ---
 
@@ -531,6 +540,32 @@ browser=chrome
 ui.base.url=https://www.saucedemo.com/
 api.base.url=https://dummyjson.com
 ```
+
+This keeps application URLs and runtime configuration separate from test logic.
+
+---
+
+# 🧱 Design Principles
+
+### Separation of Concerns
+
+Test logic, page interactions and API request handling are separated into dedicated classes.
+
+### Reusability
+
+Common browser setup and reusable page methods are shared between tests.
+
+### Maintainability
+
+Locators and page-specific actions are maintained inside Page Object classes.
+
+### Readability
+
+Cucumber feature files describe business scenarios using readable Gherkin syntax.
+
+### Scalability
+
+New pages, API modules and feature files can be added without redesigning the existing framework structure.
 
 ---
 
@@ -558,23 +593,19 @@ Verify Maven:
 mvn -version
 ```
 
----
-
-## Clone the Repository
+## Clone the repository
 
 ```bash
 git clone <YOUR_GITHUB_REPOSITORY_URL>
 ```
 
-Navigate into the project:
+Navigate to the project:
 
 ```bash
 cd ecommerce-hybrid-automation-framework
 ```
 
----
-
-## Execute Tests
+Run the complete test suite:
 
 ```bash
 mvn test
@@ -584,14 +615,14 @@ mvn test
 
 # 📚 Wipro Training Curriculum Alignment
 
-This project is aligned with the major automation topics covered in the training curriculum:
+This project demonstrates the major automation concepts covered in the training curriculum:
 
 - Selenium WebDriver
 - Browser and navigation commands
 - WebElement identification
 - CSS selectors and XPath
 - Synchronization strategies
-- TestNG framework
+- TestNG
 - Automation framework design
 - Page Object Model
 - Maven lifecycle
@@ -609,39 +640,19 @@ This project is aligned with the major automation topics covered in the training
 
 # 🔮 Future Enhancements
 
-Possible future improvements include:
+Possible future improvements:
 
 - Parallel test execution
 - Cross-browser testing
 - Data-driven testing
 - Additional Cucumber scenarios
-- API authentication testing
+- API authentication scenarios
 - Additional API coverage
 - Screenshot capture on test failure
-- Advanced HTML reporting
-- Jenkins CI/CD integration
+- Advanced reporting
+- Jenkins / CI-CD integration
 - Multiple environment support
 - Mobile automation using Appium
-
----
-
-# 🎓 Learning Outcomes
-
-This project demonstrates practical knowledge of:
-
-- Selenium WebDriver
-- Java automation
-- TestNG
-- Page Object Model
-- Cucumber / Gherkin
-- Behavior-Driven Development
-- REST API testing
-- REST Assured
-- JSONPath
-- Maven
-- Git and GitHub
-- Test reporting
-- Test synchronization
 
 ---
 
@@ -654,7 +665,7 @@ This project demonstrates practical knowledge of:
 | Page Object Model | ✅ Completed |
 | Cucumber / BDD | ✅ Completed |
 | REST API Testing | ✅ Completed |
-| Maven | ✅ Completed |
+| Maven Integration | ✅ Completed |
 | Test Reporting | ✅ Completed |
 | GitHub Repository | ✅ Completed |
 | Documentation | ✅ Completed |

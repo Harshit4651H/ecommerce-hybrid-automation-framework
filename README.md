@@ -745,7 +745,9 @@ This project provides practical implementation of:
 
 # Author
 
-B.Tech Computer Science & Engineering (AI & ML)
+Harshit Tyagi
+
+B.Tech — Computer Science & Engineering (AI & ML)
 
 ---
 

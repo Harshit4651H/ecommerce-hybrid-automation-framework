@@ -743,47 +743,6 @@ This project provides practical implementation of:
 
 ---
 
-# Curriculum Alignment
-
-This project is aligned with the major areas covered in the automation training curriculum:
-
-* Selenium and WebDriver
-* Browser and navigation commands
-* WebElement identification
-* CSS selectors and XPath
-* Advanced element interaction
-* Synchronization strategies
-* TestNG framework
-* Automation framework design
-* Page Object Model
-* Maven lifecycle
-* Cucumber and Gherkin
-* BDD
-* API and Web Service concepts
-* HTTP methods and status codes
-* Postman concepts
-* REST Assured
-* JSONPath and API validation
-* Reporting
-
----
-
-# Project Status
-
-| Module                 | Status      |
-| ---------------------- | ----------- |
-| Selenium UI Automation | ✅ Completed |
-| TestNG Framework       | ✅ Completed |
-| Page Object Model      | ✅ Completed |
-| Cucumber / BDD         | ✅ Completed |
-| REST API Testing       | ✅ Completed |
-| Maven Integration      | ✅ Completed |
-| Test Reporting         | ✅ Completed |
-| GitHub Repository      | ✅ Completed |
-| Documentation          | ✅ Completed |
-
----
-
 # Author
 
 B.Tech Computer Science & Engineering (AI & ML)
